@@ -1,0 +1,36 @@
+{
+  "name": "lu-doces-pwa",
+  "version": "1.0.0",
+  "description": "Lu Doces - Progressive Web App para doces artesanais",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -c-1",
+    "dev": "npx http-server -p 8080 -c-1 --cors",
+    "build": "echo 'PWA já está pronto para produção!'",
+    "test": "echo 'Teste o PWA no navegador em http://localhost:8080'",
+    "lighthouse": "npx lighthouse http://localhost:8080 --view"
+  },
+  "keywords": [
+    "pwa",
+    "progressive-web-app",
+    "doces",
+    "bakery",
+    "responsive",
+    "offline"
+  ],
+  "author": "Lu Doces",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "lighthouse": "^11.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/lu-doces-pwa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/lu-doces-pwa/issues"
+  },
+  "homepage": "https://seu-usuario.github.io/lu-doces-pwa"
+}
+

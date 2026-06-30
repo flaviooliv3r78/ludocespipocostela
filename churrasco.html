@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a52a2a">
+
+  <title>Pipo Costela - Lu Doces</title>  
+
+  <!-- Estilos diferentes -->
+  <link rel="stylesheet" href="churrasco.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="churrasco-page">
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+<i class="fas fa-utensils"></i>
+        <span>Pipo Costela</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Doces</a></li>
+        <li class="ifood-link">
+          <a href="https://www.ifood.com.br" target="_blank" rel="noopener noreferrer">
+            <img src="logo.png/ifood-43.png" alt="iFood" class="ifood-logo">
+            <span>Peça por aqui!</span>
+          </a>
+        </li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero" style="display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;">
+    <div class="carousel-fotos" style="position:relative;max-width:520px;width:100%;height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:28px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+      <img src="img/grelha 2.jpg" alt="Grelha 2" class="carousel-img active">
+      <img src="img/espeto.jpg" alt="Grelha 3" class="carousel-img">
+      <img src="img/frango 2.jpg" alt="Grelha 4" class="carousel-img">
+      <img src="img/churrasco 3.jpg" alt="Grelha 5" class="carousel-img">
+      <img src="img/churrasco 2.jpg" alt="Grelha 6" class="carousel-img">
+      <div class="carousel-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:32px 24px;z-index:3;background:rgba(255,255,255,0.18);">
+        <h1 style="font-family:'Dancing Script',cursive;font-size:2.2rem;color:#6b3e26;margin-bottom:12px;">Especialista em Churrasco</h1>
+        <p style="font-size:1.15rem;color:#333;margin-bottom:10px;">Carne macia, sabor único e aquele tempero especial</p>
+        
+        <a href="#cardapio" class="cta-button">Ver Cardápio</a>
+      </div>
+    </div>
+    <div class="carousel-videos" style="position:relative;width:520px;height:280px;border-radius:28px;overflow:hidden;box-shadow:0 4px 24px rgba(107,62,38,0.15);display:flex;align-items:center;justify-content:center;">
+      <video src="img/video/14108027_1920_1080_60fps.mp4" autoplay muted loop class="carousel-video active" poster="img/video/14108027_1920_1080_60fps.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:28px;opacity:1;transition:opacity 1.2s;"></video>
+      <video src="img/video/4042727-hd_1920_1080_24fps.mp4" autoplay muted loop class="carousel-video" poster="img/video/4042727-hd_1920_1080_24fps.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:28px;opacity:0;transition:opacity 1.2s;"></video>
+      <video src="img/video/4362435-hd_1920_1080_24fps.mp4" autoplay muted loop class="carousel-video" poster="img/video/4362435-hd_1920_1080_24fps.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:28px;opacity:0;transition:opacity 1.2s;"></video>
+      <video src="img/video/4362435-hd_1920_1080_24fps.mp4" autoplay muted loop class="carousel-video" poster="img/video/2941104-uhd_4096_2160_24fps.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:28px;opacity:0;transition:opacity 1.2s;"></video>
+      <video src="img/video/15046013-hd_1080_1920_50fps.mp4" autoplay muted loop class="carousel-video" poster="img/video/" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:28px;opacity:0;transition:opacity 1.2s;"></video>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <h2>Sobre Nós</h2>
+      <p>Nosso churrasco a bafo é preparado lentamente, garantindo sabor e maciez incomparáveis.  
+         Ideal para festas, eventos e confraternizações.</p>
+    </div>
+  </section>
+
+  <!-- Cardápio -->
+  <section id="cardapio" class="produtos">
+    <div class="container">
+      <h2>Nosso Cardápio</h2>
+      <div class="produtos-grid">
+         <article class="produto-card">
+          <img src="img/contra.jpg" alt="Picanha na Brasa">
+          <h3>Churrasco a Bafo </h3>
+          <p> Tempero Caseiro , cozida no aluminio </p>
+          <span class="preco">R$ 75,00/kg</span>
+        </article>
+        <article class="produto-card">
+          <img src="img/picanha.jpg" alt="Picanha na Brasa">
+          <h3>Picanha na Brasa</h3>
+          <p>Acompanha farofa, vinagrete e pão de alho</p>
+          <span class="preco">R$ 65,00/kg</span>
+        </article>
+        <article class="produto-card">
+          <img src="img/costela.jpg" alt="Costela Bovina">
+          <h3>Costela Bovina</h3>
+          <p>Assada lentamente para máximo sabor</p>
+          <span class="preco">R$ 55,00/kg</span>
+        </article>
+        <article class="produto-card">
+          <img src="img/galinha.jpg" alt="Frango Grelhado">
+          <h3>Frango Assado</h3>
+          <p>Suave e saboroso, com tempero especial</p>
+          <span class="preco">R$ 35,00/kg</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contato">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <div class="contato-content">
+        <div class="contato-info">
+          <div class="contato-item">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <h3>WhatsApp</h3>
+              <p><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">(11) 99999-9999</a></p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>Telefone</h3>
+              <p>(11) 99999-9999</p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:contato@ludoces.com">contato@ludoces.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Churrasco a Bafo - Todos os direitos reservados.Desenvolvido por Flavio de Oliveira f3nsolitions.com</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flutuante -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5511999999999?text=Olá, quero informações sobre o churrasco!"
+       target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i>
+      <span>Vai oque pra hoje ?</span>
+    </a>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/pwa.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var video = document.querySelector('.hero-image video');
+      if(video) video.playbackRate = 0.6; // diminui a velocidade do vídeo
+    });
+
+    // Carrossel de fotos
+    const fotos = document.querySelectorAll('.carousel-img');
+    let fotoIndex = 0;
+    setInterval(() => {
+      fotos.forEach((img, i) => img.style.opacity = (i === fotoIndex ? '1' : '0'));
+      fotoIndex = (fotoIndex + 1) % fotos.length;
+    }, 4000);
+
+    // Carrossel de vídeos
+    const videos = document.querySelectorAll('.carousel-video');
+    let videoIndex = 0;
+    setInterval(() => {
+      videos.forEach((vid, i) => vid.style.opacity = (i === videoIndex ? '1' : '0'));
+      videoIndex = (videoIndex + 1) % videos.length;
+    }, 4000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body.churrasco-page {
+    background: linear-gradient(135deg, #6b3e26 60%, #ffe066 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    min-height: 100vh;
+}
+.navbar {
+    background: #fff;
+    color: #6b3e26;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 0 0 0 0;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #6b3e26;
+}
+.nav-menu {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+.nav-menu li a {
+    color: #6b3e26;
+    text-decoration: none;
+    font-size: 1.08rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 18px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-menu li a:hover {
+    background: #ffe066;
+    color: #6b3e26;
+}
+
+.ifood-link a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ifood-logo {
+    flex-shrink: 0;
+    width: auto;
+    height: 24px;
+    max-width: 80px;
+    object-fit: contain;
+}
+
+.ifood-link a:hover::after {
+    display: none;
+}
+.nav-item.cta .btn-cta {
+    background: #ffe066;
+    color: #6b3e26;
+    font-weight: 700;
+    border-radius: 22px;
+    padding: 8px 14px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-item.cta .btn-cta:hover {
+    background: #6b3e26;
+    color: #fff;
+}
+.btn-retornar {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: #6b3e26;
+    padding: 8px 16px;
+    border-radius: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1.08rem;
+    opacity: 1;
+    margin-right: 18px;
+}
+.btn-retornar:hover {
+    background: #ffe066;
+    color: #6b3e26;
+}
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding: 60px 0 30px 0;
+}
+.hero-content {
+    max-width: 480px;
+    position: relative;
+    background: url('img/grelha 2.jpg') center center/cover no-repeat;
+    border-radius: 28px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    color: #222;
+    z-index: 1;
+}
+.hero-content h1,
+.hero-content p,
+.hero-content .cta-button {
+    position: relative;
+    z-index: 2;
+}
+.hero-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.323);
+    border-radius: 28px;
+    z-index: 1;
+}
+.hero-content h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #6b3e26;
+    margin-bottom: 18px;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+}
+.cta-button {
+    background: #ffe066;
+    color: #6b3e26;
+    font-weight: 700;
+    border-radius: 22px;
+    padding: 10px 22px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+}
+.cta-button:hover {
+    background: #6b3e26;
+    color: #fff;
+}
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 320px;
+    max-height: 480px;
+}
+.hero-image img,
+.hero-image video {
+    width: 540px;
+    height: 340px;
+    max-width: 90vw;
+    max-height: 48vw;
+    border-radius: 28px;
+    border: 4px solid #ffe066;
+    box-shadow: 0 4px 24px rgba(107,62,38,0.15);
+    object-fit: cover;
+    transition: transform 2.2s cubic-bezier(.2,.9,.2,1), box-shadow 0.3s;
+}
+@keyframes hero-zoom {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.045) translateY(-8px); }
+    100% { transform: scale(1) translateY(0); }
+}
+.sobre {
+    padding: 40px 0;
+}
+.sobre .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sobre h2 {
+    font-size: 2rem;
+    color: #6b3e26;
+    margin-bottom: 18px;
+}
+.produtos {
+    padding: 40px 0;
+}
+.produtos .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    justify-items: center;
+    align-items: stretch;
+    margin: 0 auto;
+    width: 100%;
+}
+.produto-card {
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 18px 24px;
+    min-width: 220px;
+    max-width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    transition: transform 0.45s cubic-bezier(.2,.9,.2,1), box-shadow 0.3s;
+    margin-bottom: 0;
+}
+.produto-card:hover {
+    transform: scale(1.035);
+    box-shadow: 0 8px 32px rgba(107,62,38,0.13);
+}
+.produto-card img {
+    max-width: 100%;
+    max-height: 180px;
+    min-width: 120px;
+    border-radius: 18px;
+    object-fit: cover;
+    transition: transform 0.45s cubic-bezier(.2,.9,.2,1), box-shadow 0.3s;
+}
+.produto-card:hover img {
+    transform: scale(1.03);
+}
+.produto-card h3 {
+    color: #6b3e26;
+    font-size: 1.35rem;
+    font-family: 'Dancing Script', 'Poppins', cursive, sans-serif;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+.produto-card p {
+    color: #444;
+    font-size: 1.08rem;
+    margin-bottom: 6px;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.preco {
+    color: #a52a2a;
+    font-family: 'Dancing Script', 'Poppins', cursive, sans-serif;
+    font-weight: 700;
+    font-size: 1.18rem;
+    letter-spacing: 0.5px;
+}
+.contato {
+    background: #fff7e6;
+    padding: 40px 0;
+}
+.contato .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.contato-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.contato-item i {
+    font-size: 1.6rem;
+    color: #6b3e26;
+    width: 36px;
+    text-align: center;
+}
+.contato-item h3 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+.contato-item p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #444;
+}
+.contato-item a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+.contato-item a:hover {
+    text-decoration: underline;
+}
+footer {
+    background: #6b3e26;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+}
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    font-size: 1rem;
+    transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease;
+    transform: translateY(18px);
+    opacity: 0;
+    pointer-events: none;
+}
+.whatsapp-float.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+.whatsapp-float a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+.whatsapp-float i {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.whatsapp-float span {
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+@keyframes cardapio-slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-33%); }
+    45% { transform: translateX(-33%); }
+    50% { transform: translateX(-66%); }
+    70% { transform: translateX(-66%); }
+    75% { transform: translateX(0); }
+    100% { transform: translateX(0); }
+}
+.carousel-fotos {
+    position: relative;
+    max-width: 520px;
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 0;
+}
+.carousel-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(.2,.9,.2,1);
+    z-index: 1;
+}
+.carousel-img.active {
+    opacity: 1;
+    z-index: 2;
+}
+.carousel-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 24px;
+    z-index: 3;
+    background: rgb(255, 255, 255);
+}
+.carousel-overlay h1 {
+    font-family: 'Dancing Script',cursive;
+    font-size: 2.2rem;
+    color: #6b3e26;
+    margin-bottom: 12px;
+}
+.carousel-overlay p {
+    font-size: 1.15rem;
+    color: #333;
+    margin-bottom: 18px;
+}
+.carousel-videos {
+    position: relative;
+    width: 720px;
+    height: 280px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(107,62,38,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(.2,.9,.2,1);
+    z-index: 1;
+}
+.carousel-video.active {
+    opacity: 1;
+    z-index: 2;
+}
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .hero-content {
+        padding: 18px 8vw;
+        max-width: 98vw;
+    }
+    .hero-image img {
+        max-width: 98vw;
+    }
+    .produtos-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .produto-card {
+        min-width: 80vw;
+        max-width: 95vw;
+        padding: 14px 8vw;
+    }
+    .produto-card img {
+        max-height: 160px;
+    }
+    .carousel-fotos {
+        max-width: 98vw;
+        height: 180px;
+    }
+    .carousel-videos {
+        width: 98vw;
+        height: 220px;
+    }
+}
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 8px;
+    }
+    .hero {
+        padding: 32px 0 18px 0;
+    }
+    .ifood-logo {
+        height: 20px;
+        max-width: 60px;
+    }
+    .produto-card {
+        padding: 14px;
+        max-width: 98vw;
+    }
+    .btn-retornar {
+        top: 70px;
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 0.92rem;
+    }
+    .hero-image img,
+    .hero-image video {
+        width: 98vw;
+        height: 180px;
+        max-height: 40vw;
+    }
+}

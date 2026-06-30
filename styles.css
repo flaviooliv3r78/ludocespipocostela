@@ -1,0 +1,881 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* claro por padrão */
+    color: #222;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff69b4;
+}
+
+.nav-logo i {
+    font-size: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #ff69b4;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff69b4;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.ifood-link a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ifood-logo {
+    flex-shrink: 0;
+    width: auto;
+    height: 24px;
+    max-width: 80px;
+    object-fit: contain;
+}
+
+.ifood-link a:hover::after {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    padding: 100px 20px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('logo.png/bakery-2691915_1280.jpg') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+    background: white;
+    color: #ff69b4;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Seções gerais */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Sobre Section */
+.sobre {
+    background: #f9f9f9;
+}
+
+.sobre-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.destaques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.destaque {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.destaque:hover {
+    transform: translateY(-5px);
+}
+
+.destaque i {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 1rem;
+}
+
+.destaque h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.destaque p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Produtos Section */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.produto-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-10px);
+}
+
+.produto-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.produto-card h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.produto-card p {
+    padding: 0 1.5rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.preco {
+    display: block;
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff69b4;
+}
+
+/* Contato Section */
+.contato {
+    background: #f9f9f9;
+}
+
+.contato-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contato-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255,255,255,0.85);
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.contato-item i {
+    font-size: 1.6rem;
+    color: #6b3e26; /* cor neutra/associada a churrasco */
+    width: 36px;
+    text-align: center;
+}
+
+.contato-item h3 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.contato-item p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #444;
+}
+
+.contato-item a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contato-item a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: #ff69b4;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #ff69b4;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ff1493;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 20px 50px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+
+    .sobre-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .destaques {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .ifood-logo {
+        height: 20px;
+        max-width: 60px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .destaque {
+        padding: 1.5rem;
+    }
+
+    .contato-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll suave para links internos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos adicionais para melhor UX */
+.nav-menu a.active {
+    color: #ff69b4;
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* Melhorias para acessibilidade */
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #ff69b4;
+    outline-offset: 2px;
+}
+
+/* Loading state para formulário */
+.contato-form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Melhor contraste para textos */
+.hero h1,
+.hero p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Efeito de hover mais suave */
+.produto-card,
+.destaque,
+.contato-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Melhor responsividade para telas muito pequenas */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+         .nav-logo i {
+         font-size: 1.5rem;
+     }
+ }
+
+ /* WhatsApp flutuante: aparece ao rolar */
+ .whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transform: translateY(18px) scale(.98);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease;
+}
+.whatsapp-float.visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+.whatsapp-float a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+.whatsapp-float i {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.whatsapp-text {
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+/* em telas pequenas, esconder o texto e manter só o ícone */
+@media (max-width: 420px) {
+    .whatsapp-text { display: none; }
+ }
+
+/* Botão flutuante de instalação (FAB) */
+ .install-fab {
+     position: fixed;
+     left: 10px;        /* mais à esquerda */
+     bottom: 30px;
+     z-index: 9999;
+     display: flex;
+     align-items: center;
+     gap: 8px;          /* menor espaço entre ícone e texto */
+     background: #fff;
+     color: #ff69b4;
+     border: none;
+     border-radius: 50px;
+     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+     padding: 8px 18px; /* menor altura/largura */
+     font-size: 0.95rem;/* texto menor */
+     font-weight: 600;
+     cursor: pointer;
+     transition: box-shadow 0.3s;
+ }
+
+ .install-fab i {
+     font-size: 1.2rem; /* ícone menor */
+ }
+
+/* Animação de pulso */
+ @keyframes pulse {
+     0% {
+         transform: scale(1);
+     }
+     50% {
+         transform: scale(1.05);
+     }
+     100% {
+         transform: scale(1);
+     }
+ }
+
+/* Responsividade para WhatsApp */
+ @media (max-width: 768px) {
+     .whatsapp-float {
+         bottom: 20px;
+         right: 20px;
+     }
+     
+     .whatsapp-float a {
+         width: 55px;
+         height: 55px;
+         font-size: 1.8rem;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .whatsapp-float {
+         bottom: 15px;
+         right: 15px;
+     }
+     .whatsapp-float a {
+         width: 50px;
+         height: 50px;
+         font-size: 1.6rem;
+     }
+ }
+
+ /* Estilos específicos para PWA */
+ @media (display-mode: standalone) {
+     body {
+         padding-top: 0;
+     }
+     
+     .navbar {
+         padding-top: env(safe-area-inset-top);
+     }
+     
+     .whatsapp-float {
+         bottom: calc(15px + env(safe-area-inset-bottom));
+     }
+ }
+
+ /* Melhorias para dispositivos móveis */
+ @media (max-width: 768px) {
+     /* Melhorar área de toque */
+     .nav-menu a,
+     .cta-button,
+     .contato-form button {
+         min-height: 44px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+     
+     /* Melhorar espaçamento para toque */
+     .produto-card,
+     .destaque,
+     .contato-item {
+         margin-bottom: 1rem;
+     }
+     
+     /* Melhorar feedback visual */
+     .produto-card:active,
+     .destaque:active,
+     .contato-item:active {
+         transform: scale(0.98);
+     }
+ }
+
+ /* Animações para PWA */
+ @keyframes appInstall {
+     from {
+         transform: translateY(-100%);
+         opacity: 0;
+     }
+     to {
+         transform: translateY(0);
+         opacity: 1;
+     }
+ }
+
+ .install-button {
+     animation: appInstall 0.5s ease;
+ }
+
+ /* Melhorar acessibilidade para PWA */
+ @media (prefers-reduced-motion: reduce) {
+     * {
+         animation-duration: 0.01ms !important;
+         animation-iteration-count: 1 !important;
+         transition-duration: 0.01ms !important;
+     }
+ }
+
+ /* Estilos para modo offline */
+ .offline-indicator {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     background: #ff9800;
+     color: white;
+     text-align: center;
+     padding: 10px;
+     z-index: 10000;
+     font-weight: 600;
+ }
+
+ /* Melhorar contraste para PWA */
+ @media (prefers-contrast: high) {
+     .hero {
+         background: #000;
+     }
+     
+     .hero h1,
+     .hero p {
+         color: #fff;
+     }
+ }
+
+ /* Suporte para dark mode */
+ @media (prefers-color-scheme: dark) {
+     body {
+         background: #1a1a1a;
+         color: #fff;
+     }
+     
+     .navbar {
+         background: rgba(26, 26, 26, 0.95);
+     }
+     
+     .sobre,
+     .contato {
+         background: #2a2a2a;
+     }
+     
+     .produto-card,
+     .destaque,
+     .contato-item {
+         background: #333;
+         color: #fff;
+     }
+ }
+
+/* botão no navbar */
+.nav-item.cta .btn-cta {
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 22px;
+    padding: 8px 14px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    opacity: 0;
+    pointer-events: none;
+}
+.nav-item.cta:hover .btn-cta,
+.nav-item.cta .btn-cta:hover {
+    background: #6b3e26;
+    color: #fff;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-menu .btn-cta {
+  background: #ff69b4; /* cor padrão igual aos outros botões */
+  color: #fff;
+  border-radius: 22px;
+  padding: 8px 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 200ms ease, transform 150ms ease;
+}
+.nav-menu .btn-cta:hover {
+  background: #6b3e26; /* marrom só no hover */
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* botão flutuante (lado esquerdo ou direito conforme preferir) */
+.floating-churrasco {
+    position: fixed;
+    left: 20px; /* ajustar para right:20px se preferir direita */
+    bottom: 20px;
+    z-index: 9999;
+}
+.floating-churrasco a {
+    display: inline-block;
+    background: linear-gradient(90deg,#6b3e26,#ffcc33);
+    color: #111;
+    padding: 10px 16px;
+    border-radius: 28px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transition: transform 180ms ease;
+}
+.floating-churrasco a:hover {
+    transform: translateY(-3px);
+}
+

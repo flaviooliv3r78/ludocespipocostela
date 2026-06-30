@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prévia Visual - Lu Doces PWA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .device-preview {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .device-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .phone-frame {
+            width: 280px;
+            height: 500px;
+            background: #333;
+            border-radius: 25px;
+            padding: 10px;
+            margin: 0 auto 1rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+            background: #333;
+            border-radius: 0 0 10px 10px;
+            z-index: 10;
+        }
+
+        .app-content {
+            padding: 40px 20px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ff69b4;
+        }
+
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .tablet-frame {
+            width: 400px;
+            height: 300px;
+            background: #333;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 0 auto 1rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .tablet-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .desktop-frame {
+            width: 500px;
+            height: 350px;
+            background: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0 auto 1rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .desktop-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .desktop-stand {
+            width: 100px;
+            height: 60px;
+            background: #333;
+            margin: 0 auto;
+            border-radius: 0 0 50px 50px;
+        }
+
+        .features-list {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .features-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #ff69b4;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: #ff69b4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .feature-text {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .install-instructions {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            margin-top: 2rem;
+        }
+
+        .instructions-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .instruction-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: #ff69b4;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-text {
+            color: #333;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .phone-frame, .tablet-frame, .desktop-frame {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Prévia Visual - Lu Doces PWA</h1>
+        
+        <div class="preview-grid">
+            <!-- Smartphone -->
+            <div class="device-preview">
+                <div class="device-title">📱 Smartphone</div>
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="app-content">
+                            <div class="app-icon">🍰</div>
+                            <div class="app-title">Lu Doces</div>
+                            <div class="app-subtitle">Doces Artesanais</div>
+                        </div>
+                    </div>
+                </div>
+                <p>Instalação na tela inicial</p>
+            </div>
+
+            <!-- Tablet -->
+            <div class="device-preview">
+                <div class="device-title">📱 Tablet</div>
+                <div class="tablet-frame">
+                    <div class="tablet-screen">
+                        <div class="app-content">
+                            <div class="app-icon">🍰</div>
+                            <div class="app-title">Lu Doces</div>
+                            <div class="app-subtitle">Doces Artesanais</div>
+                        </div>
+                    </div>
+                </div>
+                <p>Experiência otimizada</p>
+            </div>
+
+            <!-- Desktop -->
+            <div class="device-preview">
+                <div class="device-title">💻 Desktop</div>
+                <div class="desktop-frame">
+                    <div class="desktop-screen">
+                        <div class="app-content">
+                            <div class="app-icon">🍰</div>
+                            <div class="app-title">Lu Doces</div>
+                            <div class="app-subtitle">Doces Artesanais</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="desktop-stand"></div>
+                <p>App instalável</p>
+            </div>
+        </div>
+
+        <div class="features-list">
+            <div class="features-title">✨ Funcionalidades do App</div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-text">Instalação como app nativo</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-text">Funcionamento offline</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👆</div>
+                    <div class="feature-text">Navegação por gestos</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📳</div>
+                    <div class="feature-text">Feedback tátil</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⬇️</div>
+                    <div class="feature-text">Pull-to-refresh</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔔</div>
+                    <div class="feature-text">Notificações push</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌙</div>
+                    <div class="feature-text">Modo escuro automático</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">Carregamento rápido</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="install-instructions">
+            <div class="instructions-title">📋 Como Instalar</div>
+            
+            <div class="instruction-step">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                    <strong>Android (Chrome):</strong> Menu (3 pontos) → "Adicionar à tela inicial"
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                    <strong>iPhone (Safari):</strong> Botão compartilhar → "Adicionar à Tela de Início"
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                    <strong>Desktop (Chrome/Edge):</strong> Ícone de instalação na barra de endereços
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">4</div>
+                <div class="step-text">
+                    <strong>Confirme a instalação</strong> e o app aparecerá na tela inicial/desktop
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
